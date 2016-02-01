@@ -180,7 +180,17 @@ Field[2].LcMax = 0.4;
 Field[2].DistMin = 0.01;
 Field[2].DistMax = 0.6;
 
+
+// Create Box refinement defined by VIn inside box and VOut outside box
+Field[3] = Box;
+Field[3].VIn = 0.05;
+Field[3].VOut = 0.4;
+Field[3].XMin = -0.2;
+Field[3].XMax = 2.0;
+Field[3].YMin = -0.2;
+Field[3].YMax = 0.2;
+
 // Create Backgound field as minimum of refined field
-Field[3] = Min;
-Field[3].FieldsList = {2};
-Background Field = 3;
+Field[4] = Min;
+Field[4].FieldsList = {3};
+Background Field = 4;

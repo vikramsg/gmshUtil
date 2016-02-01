@@ -118,6 +118,21 @@ class PtsToGeo:
 
         op.close()
 
+    def addFieldBox(self, fileName, xMin, xMax, yMin, yMax, vIn, vOut, fieldNo):
+        op=open(fileName,'a')
+        op.write("\n\n// Create Box refinement defined by VIn inside box and VOut outside box\n")
+        op.write("Field["+str(fieldNo)+"] = Box;\n")
+
+        op.write("Field["+str(fieldNo)+"].VIn = "+str(vIn)+";\n")
+        op.write("Field["+str(fieldNo)+"].VOut = "+str(vOut)+";\n")
+        op.write("Field["+str(fieldNo)+"].XMin = "+str(xMin)+";\n")
+        op.write("Field["+str(fieldNo)+"].XMax = "+str(xMax)+";\n")
+        op.write("Field["+str(fieldNo)+"].YMin = "+str(yMin)+";\n")
+        op.write("Field["+str(fieldNo)+"].YMax = "+str(yMax)+";\n")
+
+        op.close()
+
+
 
 if __name__=="__main__":
     import sys
@@ -171,7 +186,10 @@ if __name__=="__main__":
 
         run.addFieldThreshold(sys.argv[2], IField=1, lcMin=0.01, lcMax=0.4, distMin=0.01, distMax=0.6, fieldNo=2)
 
-        run.addFieldMin(sys.argv[2], fieldsList="{2}", fieldNo=3)
+        run.addFieldBox(sys.argv[2], xMin = -0.2, xMax = 2.0, yMin = -0.2, yMax = 0.2, vIn = 0.02, vOut = 0.3, fieldNo=3)
+
+        run.addFieldMin(sys.argv[2], fieldsList="{3}", fieldNo=4)
+
 
 
     except IndexError:
