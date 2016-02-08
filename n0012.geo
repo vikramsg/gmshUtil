@@ -144,10 +144,10 @@ Rotate{{0,0,1}, {1,0,0}, 0.0} {Line{1};Line{2};};
 
 
 // Add a box 
-Point(135) = {-2 ,-1, 0.0, 0.5};
-Point(136) = {2 ,-1, 0.0, 0.5};
-Point(137) = {2 ,1, 0.0, 0.5};
-Point(138) = {-2 ,1, 0.0, 0.5};
+Point(135) = {-10 ,-10, 0.0, 1.5};
+Point(136) = {20 ,-10, 0.0, 1.5};
+Point(137) = {20 ,10, 0.0, 1.5};
+Point(138) = {-10 ,10, 0.0, 1.5};
 
 // Create lines for the points
 Line(3) = {135 ,136 };
@@ -165,32 +165,24 @@ Line Loop (2) = {1,2};
 Plane Surface (1) = {1,2};
 
 Point(139)={2, 0.00, 0.00, 0.010};
-Line(7)={1,139};
 
 // Create Attractor Field reference
 Field[1] = Attractor;
-Field[1].EdgesList = {7};
+Field[1].EdgesList = {1,2};
 Field[1].NNodesByEdge = 100;
 
-// Create Threshold for Attractor Field reference
-Field[2] = Threshold;
-Field[2].IField = 1;
-Field[2].LcMin = 0.01;
-Field[2].LcMax = 0.4;
-Field[2].DistMin = 0.01;
-Field[2].DistMax = 0.6;
+
+// Create Physical section for boundary conditions
+Physical Line(21) = {6};
 
 
-// Create Box refinement defined by VIn inside box and VOut outside box
-Field[3] = Box;
-Field[3].VIn = 0.05;
-Field[3].VOut = 0.4;
-Field[3].XMin = -0.2;
-Field[3].XMax = 2.0;
-Field[3].YMin = -0.2;
-Field[3].YMax = 0.2;
+// Create Physical section for boundary conditions
+Physical Line(22) = {3,4,5};
 
-// Create Backgound field as minimum of refined field
-Field[4] = Min;
-Field[4].FieldsList = {3};
-Background Field = 4;
+
+// Create Physical section for boundary conditions
+Physical Line(23) = {1,2};
+
+
+// Create Physical section for boundary conditions
+Physical Surface(24) = {1};

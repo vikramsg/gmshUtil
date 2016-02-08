@@ -47,6 +47,9 @@ class PtsToGeo:
         op.close()
 
     def addBox(self, fileName, starX, starY, lenX, lenY, poinNo, linNo, charLen):
+        """
+        Specify start X, Y and length X, Y
+        """
         op=open(fileName,'a')
         op.write("\n\n// Add a box \n")
         point1 = "Point("+str(poinNo)+") = {" + str(starX)+" ,"+str(starY)+ ", 0.0, "+str(charLen)+"};"
@@ -133,6 +136,15 @@ class PtsToGeo:
         op.close()
 
 
+    def addPhysical(self, fileName , st):
+        op=open(fileName,'a')
+        op.write("\n\n// Create Physical section for boundary conditions\n")
+        op.write("Physical "+st+";\n")
+
+        op.close()
+
+
+
 
 if __name__=="__main__":
     import sys
@@ -153,8 +165,8 @@ if __name__=="__main__":
         run.add(sys.argv[2], "{1.005, 0.00, 0.00, 0.010};", 134)
 
         #Fit a spline over points in gmsh format
-        run.fitSpline(sys.argv[2], "{1:67,68};", 1)
-        run.fitSpline(sys.argv[2], "{68:134,1};", 2)
+        run.fitSpline(sys.argv[2], "{1:67,68};", splineNo = 1)
+        run.fitSpline(sys.argv[2], "{68:134,1};", splineNo = 2)
 
         run.rotate(sys.argv[2], axis="{0,0,1}", center="{1,0,0}", angle="0.0", entity="{Line{1};Line{2};}")
         """
@@ -163,7 +175,7 @@ if __name__=="__main__":
         first line no. available
         characteristic length
         """
-        run.addBox(sys.argv[2], -2,-1,4,2, 135, 3, 0.50)
+        run.addBox(sys.argv[2], -10,-10, 30, 20, 135, 3, 1.50)
 
         """
         Having created the required lines, close them
@@ -180,15 +192,20 @@ if __name__=="__main__":
         run.addPlaneSurface(sys.argv[2], "{1,2};", 1)
 
         run.add(sys.argv[2], "{2, 0.00, 0.00, 0.010};", 139)
-        run.addLine(sys.argv[2], "{1,139};", 7)
+#        run.addLine(sys.argv[2], "{1,139};", 7)
 
-        run.addFieldAttract(sys.argv[2], nodeList=None, edgeList="{7}", fieldNo=1)
+        run.addFieldAttract(sys.argv[2], nodeList=None, edgeList="{1,2}", fieldNo=1)
+        
+#       run.addFieldThreshold(sys.argv[2], IField=1, lcMin=0.05, lcMax=0.4, distMin=0.01, distMax=1.0, fieldNo=2)
 
-        run.addFieldThreshold(sys.argv[2], IField=1, lcMin=0.01, lcMax=0.4, distMin=0.01, distMax=0.6, fieldNo=2)
+#       run.addFieldBox(sys.argv[2], xMin = -0.2, xMax = 2.0, yMin = -0.2, yMax = 0.2, vIn = 0.02, vOut = 0.3, fieldNo=3)
+#       run.addFieldMin(sys.argv[2], fieldsList="{2}", fieldNo=4)
 
-        run.addFieldBox(sys.argv[2], xMin = -0.2, xMax = 2.0, yMin = -0.2, yMax = 0.2, vIn = 0.02, vOut = 0.3, fieldNo=3)
+        run.addPhysical(fileName = sys.argv[2], st = "Line(21) = {6}")        
+        run.addPhysical(fileName = sys.argv[2], st = "Line(22) = {3,4,5}")        
+        run.addPhysical(fileName = sys.argv[2], st = "Line(23) = {1,2}")        
+        run.addPhysical(fileName = sys.argv[2], st = "Surface(24) = {1}")        
 
-        run.addFieldMin(sys.argv[2], fieldsList="{3}", fieldNo=4)
 
 
 
