@@ -1,0 +1,463 @@
+ic_undo_group_begin 
+ic_geo_cre_geom_input /vkm/vikram/Work/icem/script/formatSD7003.dat 0.001 input PNTS pnt CRVS crv SURFS {}
+ic_boco_solver 
+ic_boco_clear_icons 
+ic_csystem_display all 0
+ic_csystem_set_current global
+ic_boco_nastran_csystem reset
+ic_undo_group_end 
+ic_set_global geo_cad 0.0005 toler
+ic_undo_group_begin 
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_geo_cre_srf_sweep CRVS srf.02 {crv0 crv1} {0 0 0.2} 1
+ic_set_global geo_cad 0.002 toler
+ic_set_dormant_pickable point 0 {}
+ic_set_dormant_pickable curve 0 {}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_set_global geo_cad 0.002 toler
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_point {} PNTS pnt.08 -8,-8,0.2
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_point {} PNTS pnt.09 -8,8,0.2
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_point {} PNTS pnt.10 8,8,0.2
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_point {} PNTS pnt.11 8,-8,0.2
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_point {} PNTS pnt.12 8,-8,0
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_point {} PNTS pnt.13 8,8,0
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_point {} PNTS pnt.14 -8,8,0
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_point {} PNTS pnt.15 -8,-8,0
+ic_undo_group_end 
+ic_set_global geo_cad 0.01 toler
+ic_undo_group_begin 
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_delete_geometry curve names crv.12 0
+ic_curve point PNTS crv.12 {pnt.09 pnt.14}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_delete_geometry curve names crv.13 0
+ic_curve point PNTS crv.13 {pnt.14 pnt.15}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_delete_geometry curve names crv.14 0
+ic_curve point PNTS crv.14 {pnt.15 pnt.08}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_delete_geometry curve names crv.15 0
+ic_curve point PNTS crv.15 {pnt.08 pnt.09}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_delete_geometry curve names crv.16 0
+ic_curve point PNTS crv.16 {pnt.09 pnt.10}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_delete_geometry curve names crv.17 0
+ic_curve point PNTS crv.17 {pnt.10 pnt.13}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_delete_geometry curve names crv.18 0
+ic_curve point PNTS crv.18 {pnt.13 pnt.14}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_delete_geometry curve names crv.19 0
+ic_curve point PNTS crv.19 {pnt.10 pnt.11}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_delete_geometry curve names crv.20 0
+ic_curve point PNTS crv.20 {pnt.11 pnt.08}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_delete_geometry curve names crv.21 0
+ic_curve point PNTS crv.21 {pnt.15 pnt.12}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_delete_geometry curve names crv.22 0
+ic_curve point PNTS crv.22 {pnt.12 pnt.11}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_delete_geometry curve names crv.23 0
+ic_curve point PNTS crv.23 {pnt.12 pnt.13}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_set_global geo_cad 0.01 toler
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_geo_new_family IN
+ic_boco_set_part_color IN
+ic_surface 2-4crvs IN srf.03 {0.01 {crv.13 crv.12 crv.15 crv.14}}
+ic_set_global geo_cad 0.01 toler
+ic_set_dormant_pickable point 0 {}
+ic_set_dormant_pickable curve 0 {}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_surface 2-4crvs IN srf.04 {0.01 {crv.15 crv.16 crv.19 crv.20}}
+ic_set_global geo_cad 0.01 toler
+ic_set_dormant_pickable point 0 {}
+ic_set_dormant_pickable curve 0 {}
+ic_undo_group_end 
+ic_undo 
+ic_geo_configure_one_attribute surface shade wire
+ic_undo_group_begin 
+ic_geo_new_family PERIOD1
+ic_boco_set_part_color PERIOD1
+ic_surface 2-4crvs PERIOD1 srf.05 {0.01 {crv.15 crv.16 crv.19 crv.20}}
+ic_set_global geo_cad 0.01 toler
+ic_set_dormant_pickable point 0 {}
+ic_set_dormant_pickable curve 0 {}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_geo_new_family OUT
+ic_boco_set_part_color OUT
+ic_surface 2-4crvs OUT srf.06 {0.01 {crv.23 crv.17 crv.19 crv.22}}
+ic_set_global geo_cad 0.01 toler
+ic_set_dormant_pickable point 0 {}
+ic_set_dormant_pickable curve 0 {}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_geo_new_family PERIOD2
+ic_boco_set_part_color PERIOD2
+ic_surface 2-4crvs PERIOD2 srf.07 {0.01 {crv.13 crv.18 crv.23 crv.21}}
+ic_set_global geo_cad 0.01 toler
+ic_set_dormant_pickable point 0 {}
+ic_set_dormant_pickable curve 0 {}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_geo_new_family TOP
+ic_boco_set_part_color TOP
+ic_surface 2-4crvs TOP srf.08 {0.01 {crv.12 crv.18 crv.17 crv.16}}
+ic_set_global geo_cad 0.01 toler
+ic_set_dormant_pickable point 0 {}
+ic_set_dormant_pickable curve 0 {}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_geo_new_family BOT
+ic_boco_set_part_color BOT
+ic_surface 2-4crvs BOT srf.09 {0.01 {crv.14 crv.21 crv.20 crv.22}}
+ic_set_global geo_cad 0.01 toler
+ic_set_dormant_pickable point 0 {}
+ic_set_dormant_pickable curve 0 {}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_geo_new_family FLUID
+ic_boco_set_part_color FLUID
+ic_geo_create_volume {-3.960392116813955 3.962518757137581 0} {} fluid
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_undo 
+ic_undo 
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_geo_create_volume {-4 4 1.936418332093787} {} fluid
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_initialize_blocking {} FLUID 0 101
+ic_hex_switch_blocking root
+ic_hex_unblank_blocks 
+ic_hex_project_to_surface PNTS CRVS TMP_CRV IN PERIOD1 OUT PERIOD2 TOP BOT FLUID
+ic_hex_multi_grid_level 0
+ic_hex_projection_limit 0
+ic_hex_default_bunching_law default 2.0
+ic_hex_floating_grid off
+ic_hex_transfinite_degree 1
+ic_hex_unstruct_face_type one_tri
+ic_hex_set_unstruct_face_method uniform_quad
+ic_hex_set_n_tetra_smoothing_steps 20
+ic_hex_set_mesh_params PNTS CRVS TMP_CRV IN PERIOD1 OUT PERIOD2 TOP BOT FLUID -version 110
+ic_hex_error_messages off_minor
+ic_hex_switch_blocking root
+ic_undo_group_end 
+ic_hex_find_comp_curve crv.13
+ic_hex_find_comp_curve crv.15
+ic_hex_find_comp_curve crv.14
+ic_hex_find_comp_curve crv.12
+ic_hex_find_comp_curve crv.21
+ic_hex_find_comp_curve crv.20
+ic_hex_find_comp_curve crv.19
+ic_hex_find_comp_curve crv.23
+ic_hex_find_comp_curve crv.16
+ic_hex_find_comp_curve crv.17
+ic_hex_find_comp_curve crv.18
+ic_undo_group_begin 
+ic_hex_create_composite {crv.13 crv.15 crv.14 crv.12 crv.21 crv.20 crv.19 crv.23 crv.16 crv.17 crv.18}
+ic_hex_set_edge_projection 21 25 0 1 crv.13
+ic_hex_project_to_surface 21 25
+ic_hex_set_edge_projection 25 26 0 1 crv.13
+ic_hex_project_to_surface 25 26
+ic_hex_set_edge_projection 21 22 0 1 crv.13
+ic_hex_project_to_surface 21 22
+ic_hex_set_edge_projection 22 26 0 1 crv.13
+ic_hex_project_to_surface 22 26
+ic_hex_set_edge_projection 21 37 0 1 crv.13
+ic_hex_project_to_surface 21 37
+ic_hex_set_edge_projection 22 38 0 1 crv.13
+ic_hex_project_to_surface 22 38
+ic_hex_set_edge_projection 38 42 0 1 crv.13
+ic_hex_project_to_surface 38 42
+ic_hex_set_edge_projection 37 41 0 1 crv.13
+ic_hex_project_to_surface 37 41
+ic_hex_set_edge_projection 41 42 0 1 crv.13
+ic_hex_project_to_surface 41 42
+ic_hex_set_edge_projection 26 42 0 1 crv.13
+ic_hex_project_to_surface 26 42
+ic_hex_set_edge_projection 25 41 0 1 crv.13
+ic_hex_project_to_surface 25 41
+ic_undo_group_end 
+ic_undo 
+ic_undo 
+ic_hex_unload_blocking 
+ic_undo_group_begin 
+ic_hex_initialize_blocking {} FLUID 0 101
+ic_hex_switch_blocking root
+ic_hex_unblank_blocks 
+ic_hex_project_to_surface PNTS CRVS TMP_CRV IN PERIOD1 OUT PERIOD2 TOP BOT FLUID
+ic_hex_multi_grid_level 0
+ic_hex_projection_limit 0
+ic_hex_default_bunching_law default 2.0
+ic_hex_floating_grid off
+ic_hex_transfinite_degree 1
+ic_hex_unstruct_face_type one_tri
+ic_hex_set_unstruct_face_method uniform_quad
+ic_hex_set_n_tetra_smoothing_steps 20
+ic_hex_set_mesh_params PNTS CRVS TMP_CRV IN PERIOD1 OUT PERIOD2 TOP BOT FLUID -version 110
+ic_hex_error_messages off_minor
+ic_hex_switch_blocking root
+ic_undo_group_end 
+ic_hex_find_comp_curve crv.13
+ic_hex_find_comp_curve crv.12
+ic_hex_find_comp_curve crv.15
+ic_hex_find_comp_curve crv.14
+ic_hex_find_comp_curve crv.20
+ic_hex_find_comp_curve crv.19
+ic_hex_find_comp_curve crv.16
+ic_hex_find_comp_curve crv.18
+ic_hex_find_comp_curve crv.23
+ic_hex_find_comp_curve crv.21
+ic_hex_find_comp_curve crv.22
+ic_hex_find_comp_curve crv.17
+ic_undo_group_begin 
+ic_hex_create_composite {crv.13 crv.12 crv.15 crv.14 crv.20 crv.19 crv.16 crv.18 crv.23 crv.21 crv.22 crv.17}
+ic_hex_set_edge_projection 21 22 0 1 crv.13
+ic_hex_project_to_surface 21 22
+ic_hex_set_edge_projection 21 25 0 1 crv.13
+ic_hex_project_to_surface 21 25
+ic_hex_set_edge_projection 25 26 0 1 crv.13
+ic_hex_project_to_surface 25 26
+ic_hex_set_edge_projection 22 26 0 1 crv.13
+ic_hex_project_to_surface 22 26
+ic_hex_set_edge_projection 22 38 0 1 crv.13
+ic_hex_project_to_surface 22 38
+ic_hex_set_edge_projection 38 42 0 1 crv.13
+ic_hex_project_to_surface 38 42
+ic_hex_set_edge_projection 26 42 0 1 crv.13
+ic_hex_project_to_surface 26 42
+ic_hex_set_edge_projection 25 41 0 1 crv.13
+ic_hex_project_to_surface 25 41
+ic_hex_set_edge_projection 37 41 0 1 crv.13
+ic_hex_project_to_surface 37 41
+ic_hex_set_edge_projection 21 37 0 1 crv.13
+ic_hex_project_to_surface 21 37
+ic_hex_set_edge_projection 37 38 0 1 crv.13
+ic_hex_project_to_surface 37 38
+ic_hex_set_edge_projection 41 42 0 1 crv.13
+ic_hex_project_to_surface 41 42
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_split_grid 25 41 0.497746 m PNTS CRVS TMP_CRV IN PERIOD1 OUT PERIOD2 TOP BOT FLUID
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_split_grid 70 41 0.143613 m PNTS CRVS TMP_CRV IN PERIOD1 OUT PERIOD2 TOP BOT FLUID
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_split_grid 69 70 0.507474 m PNTS CRVS TMP_CRV IN PERIOD1 OUT PERIOD2 TOP BOT FLUID
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_split_grid 69 104 0.970544 m PNTS CRVS TMP_CRV IN PERIOD1 OUT PERIOD2 TOP BOT FLUID
+ic_undo_group_end 
+ic_hex_mark_blocks unmark
+ic_undo_group_begin 
+ic_hex_mark_blocks superblock 33
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_mark_blocks face_neighbors corners { 110 111 134 135 } { 104 105 128 129 } { 105 129 111 135 }
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_ogrid 0.1 not_marked m PNTS CRVS TMP_CRV IN PERIOD1 OUT PERIOD2 TOP BOT FLUID -version 50
+ic_hex_mark_blocks unmark
+ic_undo_group_end 
+ic_undo 
+ic_undo_group_begin 
+ic_hex_mark_blocks superblock 33
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_mark_blocks face_neighbors corners { 104 105 128 129 } { 110 111 134 135 } { 105 129 111 135 }
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_ogrid 0.04 not_marked m PNTS CRVS TMP_CRV IN PERIOD1 OUT PERIOD2 TOP BOT FLUID -version 50
+ic_hex_mark_blocks unmark
+ic_undo_group_end 
+ic_hex_mark_blocks unmark
+ic_hex_find_comp_curve srf.02e4
+ic_hex_find_comp_curve srf.02.1e8
+ic_undo_group_begin 
+ic_hex_create_composite {srf.02e4 srf.02.1e8}
+ic_hex_set_edge_projection 110 111 0 1 srf.02e4
+ic_hex_project_to_surface 110 111
+ic_hex_set_edge_projection 134 110 0 1 srf.02e4
+ic_hex_project_to_surface 134 110
+ic_hex_set_edge_projection 134 135 0 1 srf.02e4
+ic_hex_project_to_surface 134 135
+ic_hex_set_edge_projection 135 111 0 1 srf.02e4
+ic_hex_project_to_surface 135 111
+ic_undo_group_end 
+ic_hex_find_comp_curve crv0
+ic_hex_find_comp_curve crv1
+ic_undo_group_begin 
+ic_hex_create_composite {crv0 crv1}
+ic_hex_set_edge_projection 104 105 0 1 crv0
+ic_hex_project_to_surface 104 105
+ic_hex_set_edge_projection 128 104 0 1 crv0
+ic_hex_project_to_surface 128 104
+ic_hex_set_edge_projection 128 129 0 1 crv0
+ic_hex_project_to_surface 128 129
+ic_hex_set_edge_projection 129 105 0 1 crv0
+ic_hex_project_to_surface 129 105
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_align_vertices 3 1 1 0 0 -csys global PNTS CRVS TMP_CRV IN PERIOD1 OUT PERIOD2 TOP BOT FLUID
+ic_undo_group_end 
+ic_undo 
+ic_hex_get_node_location {  135  } _tempx _tempy _tempz
+ic_undo_group_begin 
+ic_hex_set_node_location x {$_tempx} -csys global node_numbers {{  157  } {  158  } {  154  } {  153  }}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_mark_blocks unmark
+ic_hex_mark_blocks superblock 34
+ic_hex_collapse_blocks 1 version 410
+ic_undo_group_end 
+ic_hex_place_node 110 curve:srf.02e4 0.884380125
+ic_hex_place_node 134 curve:srf.02.1e8 0.885222448
+ic_hex_get_node_location {  104  } _tempx _tempy _tempz
+ic_hex_get_node_location {  110  } _tempx _tempy _tempz
+ic_undo_group_begin 
+ic_hex_set_node_location x {$_tempx} -csys global node_numbers {{  104  } {  128  } {  134  }}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_project_to_surface 0:2,4 1:2,3 2:1,2 OUT PERIOD1 PNTS PERIOD2 CRVS TMP_CRV TOP FLUID BOT IN
+ic_undo_group_end 
+ic_hex_get_node_location {  110  } _tempx _tempy _tempz
+ic_undo_group_begin 
+ic_hex_set_node_location x {$_tempx} -csys global node_numbers {{  134  }}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_project_to_surface 0:2,4 1:2,3 2:1,2 OUT PERIOD1 PNTS PERIOD2 CRVS TMP_CRV TOP FLUID BOT IN
+ic_undo_group_end 
+ic_hex_get_node_location {  110  } _tempx _tempy _tempz
+ic_undo_group_begin 
+ic_hex_set_node_location x {$_tempx} y {$_tempy} -csys global node_numbers {{  104  }}
+ic_undo_group_end 
+ic_hex_get_node_location {  134  } _tempx _tempy _tempz
+ic_undo_group_begin 
+ic_hex_set_node_location x {$_tempx} y {$_tempy} -csys global node_numbers {{  128  }}
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_set_node_location x {$_tempx} y {$_tempy} -csys global node_numbers {{  128  }}
+ic_undo_group_end 
+ic_hex_find_comp_curve srf.02e4
+ic_undo_group_begin 
+ic_hex_set_edge_projection 134 110 0 1 srf.02e4
+ic_hex_project_to_surface 134 110
+ic_undo_group_end 
+ic_hex_find_comp_curve crv0
+ic_undo_group_begin 
+ic_hex_set_edge_projection 128 104 0 1 crv0
+ic_hex_project_to_surface 128 104
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_set_mesh 110 111 n 20 h1rel 0.0 h2rel 0.0 r1 2 r2 2 lmax 0 default copy_to_parallel unlocked
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_set_mesh 150 110 n 10 h1rel 0.0 h2rel 0.0 r1 2 r2 2 lmax 0 default copy_to_parallel unlocked
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_set_mesh 146 150 n 10 h1rel 0.0 h2rel 0.0 r1 2 r2 2 lmax 0 default copy_to_parallel unlocked
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_set_mesh 157 158 n 40 h1rel 0.0 h2rel 0.0 r1 2 r2 2 lmax 0 default copy_to_parallel unlocked
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_set_mesh 157 158 n 30 h1rel 0.0 h2rel 0.0 r1 2 r2 2 lmax 0 default copy_to_parallel unlocked
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_set_mesh 133 146 n 50 h1rel 0.0 h2rel 0.0 r1 2 r2 2 lmax 0 default copy_to_parallel unlocked
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_set_mesh 73 146 n 50 h1rel 0.0 h2rel 0.0 r1 2 r2 2 lmax 0 default copy_to_parallel unlocked
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_set_mesh 150 74 n 50 h1rel 0.0 h2rel 0.0 r1 2 r2 2 lmax 0 default copy_to_parallel unlocked
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_set_mesh 149 150 n 30 h1rel 0.0 h2rel 0.0 r1 2 r2 2 lmax 0 default copy_to_parallel unlocked
+ic_undo_group_end 
+ic_hex_list_family_projection 
+ic_hex_create_mesh PNTS CRVS IN PERIOD1 OUT PERIOD2 TOP BOT FLUID proj 2 dim_to_mesh 3
+ic_undo_group_begin 
+ic_hex_set_mesh 154 161 n 50 h1rel 0.0 h2rel 0.0 r1 2 r2 2 lmax 0 default copy_to_parallel unlocked
+ic_undo_group_end 
+ic_undo_group_begin 
+ic_hex_set_mesh 154 161 n 50 h1rel 0.0 h2rel 0.0 r1 2 r2 2 lmax 0 default copy_to_parallel unlocked
+ic_undo_group_end 
+ic_hex_list_family_projection 
+ic_hex_create_mesh PNTS CRVS IN PERIOD1 OUT PERIOD2 TOP BOT FLUID proj 2 dim_to_mesh 3
+ic_undo_group_begin 
+ic_hex_mark_blocks unmark
+ic_hex_mark_blocks superblock 33
+ic_hex_change_element_id VORFN
+ic_delete_empty_parts 
+ic_undo_group_end 

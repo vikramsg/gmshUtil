@@ -1,0 +1,11 @@
+#Writing msh
+1. Make sure that volumes in mesh is selected
+
+2. Select output as cgns. Then select write input. Accept options. Save as 3.1 ADF
+
+3. Do new mesh option and import cgns in SALOME 7.6. Switch on view for all boundaries and then export to med
+
+4. Open med in gmsh and convert to msh
+
+#Point distribution
+1. Hyperbolic seems to work well in terms of clustering. For some cases only manupulating spacing2 option works fine. For others combine spacing1 and spacing2. 
