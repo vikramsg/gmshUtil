@@ -1,9 +1,48 @@
+// Airfoil 1
+sl11n1 = 10;
+sl11n2 = 12;
+
+sl11n3 = 18;
+
+sl11n4 = 22;
+
+sl11n5 =  5;
+
+sl11n6 =  2;
+
+sl12n1 = 10;
+sl12n2 = 16;
+
+sl12n3 = 20;
+
+// Airfoil 2
+sl2n1 = 10;
+sl2n2 = 60;
+
+sl2n3 = 42;
+
+sl2n4 = 40;
+
+sl2n5 = 15;
+
+sl2n6 =  4;
+
+sl2n7 = 20;
+
+sl2n9 =  3;
+
+// Airfoil 3
+sl3n1 = 10;
+sl3n2 = 30;
+
+sl3n3 = 25;
+sl3n4 = 30;
+
+sl3n5 = 5 ;
+sl3n6 = 7 ;
+
+
 p100 = newp;
-Point(p100 + 1) = {0.019402, 0.005079, 0.00, 0.005};
-Point(p100 + 2) = {0.018859, 0.004721, 0.00, 0.005};
-Point(p100 + 3) = {0.018254, 0.004347, 0.00, 0.005};
-Point(p100 + 4) = {0.017726, 0.003954, 0.00, 0.005};
-Point(p100 + 5) = {0.017284, 0.003542, 0.00, 0.005};
 Point(p100 + 6) = {0.016878, 0.00311, 0.00, 0.005};
 Point(p100 + 7) = {0.016458, 0.002657, 0.00, 0.005};
 Point(p100 + 8) = {0.016022, 0.002183, 0.00, 0.005};
@@ -194,87 +233,168 @@ Point(p100 + 192) = {0.013376, 0.000978, 0.00, 0.005};
 Point(p100 + 193) = {0.014224, 0.001622, 0.00, 0.005};
 Point(p100 + 194) = {0.014996, 0.002209, 0.00, 0.005};
 Point(p100 + 195) = {0.015699, 0.002743, 0.00, 0.005};
-Point(p100 + 196) = {0.016339, 0.003229, 0.00, 0.005};
-Point(p100 + 197) = {0.016921, 0.003671, 0.00, 0.005};
-Point(p100 + 198) = {0.017451, 0.004074, 0.00, 0.005};
-Point(p100 + 199) = {0.017933, 0.004441, 0.00, 0.005};
-Point(p100 + 200) = {0.018372, 0.004775, 0.00, 0.005};
-Point(p100 + 201) = {0.018772, 0.005079, 0.00, 0.005};
+Point(p100 + 196) = {0.016139, 0.00311 , 0.00, 0.005};
 
-Spline(1) = {p100 +  76:p100 + 200, p100 + 201};
 
-Spline(2) = {p100 +  1:p100 +  75,  p100 +  76};
+Spline(1)  = {p100 +  76:p100 + 102, p100 + 103};
+Spline(48) = {p100 + 103:p100 + 148, p100 + 149};
+Spline(49) = {p100 + 149:p100 + 195, p100 + 196};
+
+Spline(2)  = {p100 + 56:p100 +  75,  p100 +  76};
+Spline(47) = {p100 +  6:p100 +  55,  p100 +  56};
 
 p200 = newp;
-Point(p200 + 1) = { 0.028772,  0.005079, 0.00, 0.005};
-Point(p200 + 2) = {-0.009772, -0.035079, 0.00, 0.005};
-Point(p200 + 3) = {-0.040772, -0.095079, 0.00, 0.005};
-Point(p200 + 4) = {-0.019772, -0.106779, 0.00, 0.005};
+Point(p200 + 1) = { 0.026772,  0.003079, 0.00, 0.005};
+Point(p200 + 2) = {-0.025772, -0.065079, 0.00, 0.005};
+Point(p200 + 3) = {-0.034772, -0.095079, 0.00, 0.005};
+Point(p200 + 4) = {-0.015772, -0.097779, 0.00, 0.005};
 
-BSpline(50) = {p200 +  1:p200 +  3, p200 + 4}; 
+Point(p200 + 5) = {-0.017772, -0.045079, 0.00, 0.005};
 
-Line(100)  = {p100 + 1,  p200 + 1};
+BSpline(50) = {p200 +  2:p200 +  3,  p200 + 4}; 
+BSpline(63) = {p200 +  1, p200 +  5, p200 + 2}; 
+
+Line(100)  = {p100 + 6,  p200 + 1};
 Line(101)  = {p100 + 76, p200 + 4};
+Line(176)  = {p100 + 56, p200 + 2};
 
-Line Loop(201) = {-50,  101,  2, -100};
-Plane Surface(301) = {201};
+Line Loop(213) = {-50, 101, 2, -176};
+Plane Surface(313) = {213};
 
-sl1n1 = 10;
-sl1n2 = 25;
-Transfinite Line {100} = sl1n1 Using Progression 1; 
-Transfinite Line {101} = sl1n1 Using Progression 1; 
 
-Transfinite Line {2, 50} = sl1n2 Using Progression 1; 
+Transfinite Line {101, 176}  = sl12n1 Using Progression 1; 
 
-Transfinite Surface {301};
+Transfinite Line {2     }    = sl12n2 Using Progression 1.00;
+Transfinite Line {    50}    = sl12n2 Using Progression 1.00;
+
+Transfinite Surface {313};
+
+Line Loop(214) = {47, 176, -63, -100};
+Plane Surface(314) = {214};
+
+Transfinite Line {100     }  = sl12n1 Using Progression 1; 
+
+Transfinite Line {47, 63}    = sl12n3 Using Progression 0.95;
+
+Transfinite Surface {314};
 
 p201 = newp;
-Point(p201 + 1) = { 0.005772,  0.005079, 0.00, 0.005};
-Point(p201 + 2) = {-0.050772, -0.035079, 0.00, 0.005};
-Point(p201 + 3) = {-0.102772, -0.085079, 0.00, 0.005};
-Point(p201 + 4) = {-0.101772, -0.123079, 0.00, 0.005};
-Point(p201 + 5) = {-0.071772, -0.130079, 0.00, 0.005};
-Point(p201 + 6) = {-0.021772, -0.120079, 0.00, 0.005};
+Point(p201 +  1) = { 0.005772,  0.003079, 0.00, 0.005};
+Point(p201 +  2) = {-0.055772, -0.039079, 0.00, 0.005};
+Point(p201 +  3) = {-0.095072, -0.089079, 0.00, 0.005};
+Point(p201 +  4) = {-0.091772, -0.123079, 0.00, 0.005};
+Point(p201 +  5) = {-0.062862, -0.127079, 0.00, 0.005};
+Point(p201 +  6) = {-0.021772, -0.120079, 0.00, 0.005};
 
-Point(p201 + 7) = {-0.014772, -0.118079, 0.00, 0.005};
+Point(p201 +  8) = {-0.041772, -0.127579, 0.00, 0.005};
 
-BSpline(51) = {p201 +  1:p201 +  2, p201 + 3, p201 + 4, p201 +5, p201 + 6}; 
+Point(p201 +  9) = {-0.101772, -0.103079, 0.00, 0.005};
 
-Line(102)  = {p100 + 201, p201 + 1};
+Point(p201 + 10) = {-0.085772, -0.072079, 0.00, 0.005};
+
+Point(p201 + 11) = { 0.002772, -0.098079, 0.00, 0.005};
+Point(p201 + 12) = {-0.004772, -0.112079, 0.00, 0.005};
+
+
+Line(102)  = {p100 + 196, p201 + 1};
 Line(103)  = {p100 +  76, p201 + 6};
+Line(174)  = {p100 + 103, p201 + 5};
 
-Line Loop(202) = {1, 102, 51, -103};
-Plane Surface(302) = {202};
+Line(175)  = {p100 + 149, p201 + 3};
 
-sl1n3 = 10;
-sl1n4 = 45;
-Transfinite Line {102, 103} = sl1n3 Using Progression 1; 
+BSpline(60) = {p201 +  5, p201 + 8, p201 + 6}; 
+BSpline(61) = {p201 +  5, p201 + 4, p201 + 9, p201 + 3}; 
+BSpline(62) = {p201 +  3, p201 + 10,p201 + 2, p201 + 1}; 
 
-Transfinite Line {1, 51}    = sl1n4 Using Progression 1; 
+Line Loop(220) = {1, 174, 60, -103};
+Plane Surface(320) = {220};
 
-Transfinite Surface {302};
+Transfinite Line {103, 174} = sl11n1 Using Progression 1; 
 
-Line(171)  = {p201 +   7, p201 + 6};
-Line(172)  = {p201 +   7, p200 + 4};
+Transfinite Line {-1, 60}   = sl11n2 Using Progression 1.05; 
 
-Line Loop(240) = {172, -101, 103, -171};
-Plane Surface(340) = {240};
+Transfinite Surface {320};
 
-Transfinite Line {171     } = sl1n1 Using Progression 1; 
+Line Loop(221) = {-61, 175, 48, -174};
+Plane Surface(321) = {221};
 
-Transfinite Line {172  }    = sl1n3 Using Progression 1; 
+Transfinite Line {175     } = sl11n1 Using Progression 1; 
 
-Transfinite Surface {340};
+Transfinite Line {48, 61 }  = sl11n3 Using Bump 1.3; 
 
-Line(173)  = {p100 +   1, p100 + 201};
+Transfinite Surface {321};
+
+Line Loop(222) = {49, 102, -62, -175};
+Plane Surface(322) = {222};
+
+Transfinite Line {102     } = sl11n1 Using Progression 1; 
+
+Transfinite Line {49, 62 }  = sl11n4 Using Progression 1.05; 
+
+Transfinite Surface {322};
+
+BSpline(171)  = {p201 +  11, p201 +  12, p201 + 6};
+Line(172)     = {p201 +  11, p200 + 4};
+
+Line Loop(225) = {172, -101, 103, -171};
+Plane Surface(325) = {225};
+
+Transfinite Line {171     } = sl12n1 Using Progression 1.07; 
+
+Transfinite Line {172  }    = sl11n1 Using Progression 1; 
+
+Transfinite Surface {325};
+
+Point(p201 + 13) = { 0.009772,  0.023079, 0.00, 0.005};
+Point(p201 + 14) = { 0.043772,  0.023079, 0.00, 0.005};
+Point(p201 + 15) = { 0.023772,  0.023279, 0.00, 0.005};
+Point(p201 + 16) = { 0.026772,  0.023079, 0.00, 0.005};
+
+Point(p201 + 17) = { 0.011772,  0.013079, 0.00, 0.005};
+
+Line(173)  = {p100 +   6, p100 + 196};
+Transfinite Line {173  }    = sl11n6; 
+
+BSpline(177)  = {p201 +   1, p201 + 17, p201 +  13};
+Line(178)     = {p201 +  13, p201 +  15};
+Line(179)     = {p100 + 196, p201 +  15};
+
+Line(180)     = {p201 + 15,  p201 +  16};
+Line(181)     = {p201 + 16,  p100 +   6};
+
+Line(182)     = {p201 + 16,  p201 +  14};
+Line(183)     = {p201 + 14,  p200 +   1};
+
+Line Loop(226) = {-178, 179, -102, -177};
+Plane Surface(326) = {226};
+
+Transfinite Line {178     } = sl11n1 Using Progression 1; 
+
+Transfinite Line {177, 179} = sl11n5 Using Progression 1.05; 
+
+Transfinite Surface {326};
+
+Line Loop(227) = {-179, -180, -181, -173};
+Plane Surface(327) = {227};
+
+Transfinite Line {180     } = sl11n6 Using Progression 1; 
+
+Transfinite Line {181     } = sl11n5 Using Progression 1.00; 
+
+Transfinite Surface {327};
+
+Line Loop(228) = {-183, 100, 181, -182};
+Plane Surface(328) = {228};
+
+Transfinite Line {182     } = sl12n1 Using Progression 1; 
+
+Transfinite Line {183     } = sl11n5 Using Progression 1.00; 
+
+Transfinite Surface {328};
+
 
 p101 = newp;
-Point(p101 + 1) = {0.874007, 0.030643, 0.00, 0.005};
-Point(p101 + 2) = {0.872863, 0.030858, 0.00, 0.005};
-Point(p101 + 3) = {0.871593, 0.031007, 0.00, 0.005};
-Point(p101 + 4) = {0.870183, 0.031122, 0.00, 0.005};
-Point(p101 + 5) = {0.868618, 0.031193, 0.00, 0.005};
-Point(p101 + 6) = {0.866881, 0.031269, 0.00, 0.005};
+Point(p101 + 6) = {0.867326, 0.031269, 0.00, 0.005};
 Point(p101 + 7) = {0.864953, 0.03135, 0.00, 0.005};
 Point(p101 + 8) = {0.862811, 0.031435, 0.00, 0.005};
 Point(p101 + 9) = {0.860434, 0.031522, 0.00, 0.005};
@@ -485,51 +605,47 @@ Point(p101 + 213) = {0.861779, 0.03315, 0.00, 0.005};
 Point(p101 + 214) = {0.863782, 0.032799, 0.00, 0.005};
 Point(p101 + 215) = {0.865627, 0.032473, 0.00, 0.005};
 Point(p101 + 216) = {0.867326, 0.032168, 0.00, 0.005};
-Point(p101 + 217) = {0.868891, 0.031886, 0.00, 0.005};
-Point(p101 + 218) = {0.870332, 0.031623, 0.00, 0.005};
-Point(p101 + 219) = {0.871659, 0.031379, 0.00, 0.005};
-Point(p101 + 220) = {0.872881, 0.031153, 0.00, 0.005};
-Point(p101 + 221) = {0.874007, 0.030943, 0.00, 0.005};
+
 
 
 p202 = newp;
-Point(p202 + 1) = {0.874007, 0.035943, 0.00, 0.005};
-Point(p202 + 2) = {0.669007, 0.066943, 0.00, 0.005};
-Point(p202 + 3) = {0.374007, 0.070943, 0.00, 0.005};
-Point(p202 + 4) = {0.174007, 0.061943, 0.00, 0.005};
-Point(p202 + 5) = {0.098007, 0.039943, 0.00, 0.005};
-Point(p202 + 6) = {0.068007, 0.027943, 0.00, 0.005};
-Point(p202 + 7) = {0.054007, 0.018943, 0.00, 0.005};
-Point(p202 + 8) = {0.039007, 0.005943, 0.00, 0.005};
-Point(p202 + 9) = {0.033007,-0.020943, 0.00, 0.005};
-Point(p202 +10) = {0.042007,-0.037943, 0.00, 0.005};
-Point(p202 +11) = {0.115007,-0.046943, 0.00, 0.005};
-Point(p202 +12) = {0.358007,-0.067943, 0.00, 0.005};
-Point(p202 +13) = {0.558007,-0.049943, 0.00, 0.005};
-Point(p202 +14) = {0.699997,-0.021943, 0.00, 0.005};
+Point(p202 + 1) = {0.867326, 0.040943, 0.00, 0.005};
+Point(p202 + 2) = {0.669007, 0.071943, 0.00, 0.005};
+Point(p202 + 3) = {0.374007, 0.076943, 0.00, 0.005};
+Point(p202 + 4) = {0.174007, 0.069943, 0.00, 0.005};
+Point(p202 + 5) = {0.094007, 0.045943, 0.00, 0.005};
+Point(p202 + 6) = {0.068007, 0.035943, 0.00, 0.005};
+Point(p202 + 7) = {0.047007, 0.018943, 0.00, 0.005};
+Point(p202 + 8) = {0.034007, 0.005943, 0.00, 0.005};
+Point(p202 + 9) = {0.027007,-0.020943, 0.00, 0.005};
+Point(p202 +10) = {0.042007,-0.043943, 0.00, 0.005};
+Point(p202 +11) = {0.115007,-0.053943, 0.00, 0.005};
+Point(p202 +12) = {0.358007,-0.073943, 0.00, 0.005};
+Point(p202 +13) = {0.558007,-0.058943, 0.00, 0.005};
+Point(p202 +14) = {0.699997,-0.025943, 0.00, 0.005};
 
-Point(p202 +15) = {0.874007, 0.027943, 0.00, 0.005};
-Point(p202 +16) = {0.707334, 0.027266, 0.00, 0.005};
+Point(p202 +15) = {0.867326, 0.024943, 0.00, 0.005};
+Point(p202 +16) = {0.725125, 0.019835, 0.00, 0.005};
 
-Point(p202 +17) = {0.707334,-0.017223, 0.00, 0.005};
+Point(p202 +17) = {0.725125,-0.015223, 0.00, 0.005};
 
-Point(p202 +18) = {0.707334,-0.021943, 0.00, 0.005};
+Point(p202 +18) = {0.725125,-0.025943, 0.00, 0.005};
 
-Point(p202 +19) = {0.882334, 0.035983, 0.00, 0.005};
-Point(p202 +20) = {0.882334, 0.030943, 0.00, 0.005};
-Point(p202 +21) = {0.882334, 0.028043, 0.00, 0.005};
+Point(p202 +19) = {0.872334, 0.024283, 0.00, 0.005};
+Point(p202 +20) = {0.872334, 0.030243, 0.00, 0.005};
+Point(p202 +21) = {0.872334, 0.033043, 0.00, 0.005};
+Point(p202 +22) = {0.872334, 0.042543, 0.00, 0.005};
 
-Spline(3)   = {p101 + 158:p101 + 220, p101 + 221};
+Spline(3)   = {p101 + 158:p101 + 215, p101 + 216};
 BSpline(52) = {p202 +  1:p202 +  3, p202 + 4, p202 + 5}; 
 
-Line(104)  = {p101 + 221, p202 + 1};
+Line(104)  = {p101 + 216, p202 + 1};
 Line(105)  = {p101 + 158, p202 + 5};
 
-sl2n1 = 10;
-sl2n2 = 25;
 Transfinite Line {104, 105} = sl2n1 Using Progression 1; 
 
-Transfinite Line {3, 52}    = sl2n2 Using Progression 1; 
+Transfinite Line {3    }    = sl2n2 Using Progression 1.025; 
+Transfinite Line {  -52}    = sl2n2 Using Progression 1.03; 
 
 Line Loop(203)     = {3, 104, 52, -105};
 Plane Surface(303) = {203};
@@ -544,11 +660,11 @@ Line(106)  = {p101 + 90, p202 + 11};
 Line Loop(204) = {4, 105, 53, -106};
 Plane Surface(304) = {204};
 
-sl2n3 = 25;
 
 Transfinite Line {106     } = sl2n1 Using Progression 1; 
 
-Transfinite Line {4, 53}    = sl2n3 Using Progression 1; 
+Transfinite Line {4    }    = sl2n3 Using Bump 4.00; 
+Transfinite Line {   53}    = sl2n3 Using Bump 3.00; 
 
 Transfinite Surface {304};
 
@@ -560,25 +676,22 @@ Line(107)   = {p101 + 58, p202 + 14};
 Line Loop(205) = {54, -107, 5, 106};
 Plane Surface(305) = {205};
 
-sl2n4 = 25;
-
 Transfinite Line {107     } = sl2n1 Using Progression 1; 
 
-Transfinite Line {4, 53}    = sl2n4 Using Progression 1; 
+Transfinite Line {    54}    = sl2n4 Using Progression 1.045; 
+Transfinite Line {-5    }    = sl2n4 Using Progression 1.04; 
 
 Transfinite Surface {305};
 
-Spline(6)       = {p101 +  41:p101 +  42, p101 +  43};
-Spline(7)       = {p101 +   1:p101 +  37, p101 +  38};
+Spline(6)       = {p101 +  41:p101 +  44, p101 +  45};
+Spline(7)       = {p101 +   6:p101 +  33, p101 +  34};
 
-Line(108)  = {p101 +   1, p202 + 15};
+Line(108)  = {p101 +   6, p202 + 15};
 Line(109)  = {p202 +  15, p202 + 16};
-Line(110)  = {p101 +  38, p202 + 16};
+Line(110)  = {p101 +  34, p202 + 16};
 
 Line Loop(209) = {-109,  110,  7, -108};
 Plane Surface(309) = {209};
-
-sl2n5 = 31;
 
 Transfinite Line {108, -110} = sl2n1 Using Progression 1; 
 
@@ -586,22 +699,18 @@ Transfinite Line {7, 109}    = sl2n5 Using Progression 1;
 
 Transfinite Surface {309};
 
-Spline(21)      = {p101 +  38:p101 +  40, p101 +  41};
+Spline(21)      = {p101 +  34:p101 +  40, p101 +  41};
 
-Line(111)       = {p101 +  43, p202 + 16};
+Line(111)       = {p101 +  45, p202 + 16};
 
 Line Loop(210)     = {-110,  111,  6,  21};
 Plane Surface(310) = {210};
-
-sl2n6 =  5;
-
-Transfinite Line {21,  111 } = sl2n6 Using Progression 1; 
 
 Transfinite Line { 6,  110}  = sl2n1 Using Progression 1; 
 
 Transfinite Surface {310};
 
-Spline(22)       = {p101 +  43:p101 +  57, p101 +  58};
+Spline(22)       = {p101 +  45:p101 +  57, p101 +  58};
 
 Line(112)        = {p202 +  16, p202 + 17};
 Line(113)        = {p202 +  17, p101 + 58};
@@ -609,11 +718,7 @@ Line(113)        = {p202 +  17, p101 + 58};
 Line Loop(211)     = {-112, -113,  22, -111};
 Plane Surface(311) = {211};
 
-sl2n7 = 25;
-
 Transfinite Line {22,  112 } = sl2n7 Using Progression 1; 
-
-Transfinite Line {113     }  = sl2n6 Using Progression 1; 
 
 Transfinite Surface {311};
 
@@ -625,11 +730,44 @@ Plane Surface(312) = {212};
 
 Transfinite Line {114      } = sl2n1 Using Progression 1; 
 
-Transfinite Line {115     }  = sl2n6 Using Progression 1; 
+Transfinite Line {21 }               = sl2n6 Using Progression 0.32; 
+Transfinite Line {111}               = sl2n6 Using Progression 2.5; 
+Transfinite Line {     113          }  = sl2n6 Using Progression 0.35; 
+Transfinite Line {          115     }  = sl2n6 Using Progression 0.5 ; 
 
 Transfinite Surface {312};
 
-Line(116)        = {p101 +   1, p101 + 221};
+l101   = newl;
+Line(l101 + 1)        = {p202 +  19, p202 + 20};
+Line(l101 + 2)        = {p202 +  20, p101 +  6};
+Line(l101 + 3)        = {p202 +  19, p202 + 15};
+
+Line(l101 + 4)        = {p101 +   6, p101 + 216};
+Line(l101 + 5)        = {p101 + 216, p202 +  21};
+Line(l101 + 6)        = {p202 +  21, p202 +  20};
+
+Line(l101 + 7)        = {p202 +   1, p202 +  22};
+Line(l101 + 8)        = {p202 +  22, p202 +  21};
+
+Line Loop(233) = {-337, 334, -104, -336};
+Plane Surface(333) = {233};
+
+Line Loop(234) = {-335, -331, -333, -334};
+Plane Surface(334) = {234};
+
+Line Loop(235) = {330, 331, 108, -332};
+Plane Surface(335) = {235};
+
+Transfinite Line {l101 + 1 }           = sl2n1 Using Progression 1   ; 
+Transfinite Line {l101 + 8 }           = sl2n1 Using Progression 1   ; 
+
+Transfinite Line {l101 + 2, l101 + 3}  = sl2n9 Using Progression 1   ; 
+Transfinite Line {l101 + 4, l101 + 5}  = sl2n9 Using Progression 1   ; 
+Transfinite Line {l101 + 6, l101 + 7}  = sl2n9 Using Progression 1   ; 
+
+Transfinite Surface {333};
+Transfinite Surface {334};
+Transfinite Surface {335};
 
 p102 = newp;
 Point(p102 + 1) = {1.128307, -0.145799, 0.00, 0.005};
@@ -875,8 +1013,6 @@ Point(p102 + 240) = {1.130349, -0.139786, 0.00, 0.005};
 Point(p102 + 241) = {1.130625, -0.140133, 0.00, 0.005};
 Point(p102 + 242) = {1.130859, -0.140497, 0.00, 0.005};
 
-Line(139)   = {p102 +  1, p102 + 242};
-
 Spline(8 )  = {p102 +   1:p102 +  70, p102 +  71};
 Spline(9 )  = {p102 +  71:p102 + 134, p102 + 135};
 Spline(10)  = {p102 + 135:p102 + 241, p102 + 242};
@@ -885,19 +1021,36 @@ p203 = newp;
 Point(p203 +  1) = {1.126407, -0.149099, 0.00, 0.005};
 Point(p203 +  2) = {1.027407, -0.076099, 0.00, 0.005};
 Point(p203 +  3) = {0.927407, -0.038099, 0.00, 0.005};
-Point(p203 +  4) = {0.889407, -0.022599, 0.00, 0.005};
+Point(p203 +  4) = {0.887907, -0.021599, 0.00, 0.005};
 
 Point(p203 +  5) = {0.873407, -0.013099, 0.00, 0.005};
 Point(p203 +  6) = {0.862407,  0.009099, 0.00, 0.005};
 Point(p203 +  7) = {0.871407,  0.024599, 0.00, 0.005};
 Point(p203 +  8) = {0.886407,  0.028599, 0.00, 0.005};
-Point(p203 +  9) = {0.908407,  0.024599, 0.00, 0.005};
+Point(p203 +  9) = {0.907407,  0.025399, 0.00, 0.005};
 
 Point(p203 + 10) = {0.968407,  0.005899, 0.00, 0.005};
 Point(p203 + 11) = {1.088407, -0.085599, 0.00, 0.005};
 Point(p203 + 12) = {1.133407, -0.135599, 0.00, 0.005};
 
+Point(p203 + 13) = {1.153407, -0.140599, 0.00, 0.005};
+Point(p203 + 14) = {1.148407, -0.150599, 0.00, 0.005};
+Point(p203 + 15) = {1.143407, -0.160599, 0.00, 0.005};
+Point(p203 + 16) = {1.139407, -0.169599, 0.00, 0.005};
+
+Line(190) = {p203 + 12, p203 +  13};
+Line(191) = {p203 + 13, p203 +  14};
+Line(192) = {p203 + 14, p102 + 242};
+
+Line(193) = {p203 + 14, p203 +  15};
+Line(194) = {p203 + 15, p102 +   1};
+
+Line(195) = {p203 + 15, p203 +  16};
+Line(196) = {p203 + 16, p203 +   1};
+
 BSpline(55) = {p203 +  1:p203 +  3, p203 + 4}; 
+
+Line(139)   = {p102 +  1, p102 + 242};
 
 Line(140)   = {p102 +  1, p203 +   1};
 Line(141)   = {p102 + 71, p203 +   4};
@@ -905,11 +1058,10 @@ Line(141)   = {p102 + 71, p203 +   4};
 Line Loop(206)     = {-55,  141,  8, -140};
 Plane Surface(306) = {206};
 
-sl3n1 = 10;
-sl3n2 = 25;
 Transfinite Line {140, 141} = sl3n1 Using Progression 1; 
 
-Transfinite Line {8, 55}    = sl3n2 Using Progression 1; 
+Transfinite Line {8    }    = sl3n2 Using Progression 0.95; 
+Transfinite Line {   55}    = sl3n2 Using Progression 0.91; 
 
 Transfinite Surface {306};
 
@@ -920,7 +1072,6 @@ Line(142)   = {p102 +  135, p203 +   9};
 Line Loop(207) = {9, 142, -56, -141};
 Plane Surface(307) = {207};
 
-sl3n3 = 25;
 Transfinite Line {142     } = sl3n1 Using Progression 1; 
 
 Transfinite Line {9, 56}    = sl3n3 Using Progression 1; 
@@ -934,30 +1085,50 @@ Line(143)   = {p102 + 242, p203 +  12};
 Line Loop(208) = {10, 143, -57, -142};
 Plane Surface(308) = {208};
 
-sl3n4 = 25;
+Line Loop(230) = {-191, -192, -143, -190};
+Plane Surface(330) = {230};
+
+Line Loop(231) = {-193, -194, -139, 192};
+Plane Surface(331) = {231};
+
+Line Loop(232) = {-195, -196, 140, 194};
+Plane Surface(332) = {232};
+
 Transfinite Line {143     } = sl3n1 Using Progression 1; 
 
-Transfinite Line {10, 57}   = sl3n4 Using Progression 1; 
+Transfinite Line {10    }   = sl3n4 Using Progression 1.08; 
+Transfinite Line {    57}   = sl3n4 Using Progression 1.135; 
 
 Transfinite Surface {308};
 
-nfSize = 0.525  ;  // near-field mesh size
+Transfinite Line {191     } = sl3n1 Using Progression 1; 
+Transfinite Line {195     } = sl3n1 Using Progression 1; 
+
+Transfinite Line {190, 192} = sl3n5 Using Progression 1; 
+Transfinite Line {194, 196} = sl3n5 Using Progression 1; 
+
+Transfinite Line {139, 193} = sl3n6 Using Progression 1; 
+
+Transfinite Surface {330};
+Transfinite Surface {331};
+Transfinite Surface {332};
+
+nfSize = 0.14   ;  // near-field mesh size
 
 p204   = newp;
 // Interior box of mesh
-Point(p204 + 1) = {-1.4, -0.80 , 0, nfSize};
-Point(p204 + 2) = { 3.8, -0.80 , 0, nfSize};
-Point(p204 + 3) = { 3.8,  0.90 , 0, nfSize};
-Point(p204 + 4) = {-1.4,  0.90 , 0, nfSize};
+Point(p204 + 1) = {-1.4, -0.85 , 0, nfSize};
+Point(p204 + 2) = { 3.8, -0.85 , 0, nfSize};
+Point(p204 + 3) = { 3.8,  0.95 , 0, nfSize};
+Point(p204 + 4) = {-1.4,  0.95 , 0, nfSize};
 
 Line(150) = {p204 + 1, p204 + 2};
 Line(151) = {p204 + 2, p204 + 3};
 Line(152) = {p204 + 3, p204 + 4};
 Line(153) = {p204 + 4, p204 + 1};
 
-Line Loop(341) = {150, 151, 152, 153};
-Line Loop(342) = {55, 56, 57, -143, -139, 140};
-Line Loop(343) = {104, 52, 53, 54, -115, 114, -112, -109, -108, 116};
-Line Loop(344) = {50, -172, 171, -51, -102, -173, 100};
-
-Plane Surface(345) = {341, 342, 343, 344};
+Line Loop(338) = {152, 153, 150, 151};
+Line Loop(339) = {62, 177, 178, 180, 182, 183, 63, 50, -172, 171, -60, 61};
+Line Loop(340) = {53, 54, -115, 114, -112, -109, -332, 330, -335, -337, -336, 52};
+Line Loop(341) = {56, 57, 190, 191, 193, 195, 196, 55};
+Plane Surface(342) = {338, 339, 340, 341};
